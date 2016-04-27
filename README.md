@@ -34,10 +34,16 @@ automatically.
 
 ### Customized loading
 
+Instead of using automatic downloading of definition files,
+it is possible to customize the process.
+
 ```javascript
 window.kelmu.data['name'] = {}; // replace with the definition
 window.kelmu.initAnnotations($('#element'), 'name');
 ```
+
+Definitions must be placed to the `window.kelmu.data` and after
+that call `initAnnotations` function.
 
 ## Using the editor
 

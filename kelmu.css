@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Handlee:400,700');
+div.kelmu-container a.kelmu-button {
+  background: #d93434;
+  background-image: -webkit-linear-gradient(top, #d93434, #8f1313);
+  background-image: -moz-linear-gradient(top, #d93434, #8f1313);
+  background-image: -ms-linear-gradient(top, #d93434, #8f1313);
+  background-image: -o-linear-gradient(top, #d93434, #8f1313);
+  background-image: linear-gradient(to bottom, #d93434, #8f1313);
+  -webkit-border-radius: 15;
+  -moz-border-radius: 15;
+  border-radius: 15px;
+  font-size: 15px;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+div.kelmu-container a.kelmu-button:hover {
+  background: #de3434;
+  background-image: -webkit-linear-gradient(top, #de3434, #af1313);
+  background-image: -moz-linear-gradient(top, #de3434, #af1313);
+  background-image: -ms-linear-gradient(top, #de3434, #af1313);
+  background-image: -o-linear-gradient(top, #de3434, #af1313);
+  background-image: linear-gradient(to bottom, #de3434, #af1313);
+  text-decoration: none;
+}
+div.kelmu-sound-control {
+  padding-left: 18px;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100000;
+  background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAATVJREFUOE+Vkj9LQmEUxl9tCx3u3+6Fe9eioqmtwbZA8Ss0OIng6tBYaw2F1RxBLa0JfgA3ER10UYoykBz6BAX1O/JG96aSHXh4zt/nnst71DzzfT9hmuahYRgdnZqYZVlpcg/wmk5NG8Vlmu7AJxjqtEIwA7bBOfmGfESXfozhgGJLD/8WKBE/27btwW/Ee5K8IriP4BV8D08EEF2HWwzKZj1miuAU/1oEos2zMPQ8bwnu07sPH4Aafh5+XEhA1oer9F7owT5bbcLv/xE4o/cS5PAHCGzAHwsJuK6bgOXfC6CCX4ez8JMIVHFuIhiBmABfW4W7CKXgNjNl+ATcynYx++MZC8QjXmMFHhPndSlu8lwUZx3SLtgBx+SbYRgmdWnagiCQUz6iMXbKjuPILbxQ21JKqS+UJX+IXTzEnwAAAABJRU5ErkJggg==') no-repeat left center;
+}
+div.kelmu-editor label {
+  display: inline-block;
+  min-width: 100px;
+  width: auto;
+  text-align: left;
+  padding: 0;
+}
+div.kelmu-editor textarea.kelmu-annotation-text {
+  min-width: 300px;
+  min-height: 80px;
+}
+div.kelmu-editor input:not([type="checkbox"]), div.kelmu-editor textarea {
+  width: 300px;
+}
+div.kelmu-editor button {
+  padding: 2px;
+  margin-right: 2px;
+  margin-bottom: 5px;
+  min-width: 20px;
+}
+div.kelmu-editor {
+  min-width: 350px;
+}
+a.kelmu-editor-link {
+  font-size: 9px;
+}

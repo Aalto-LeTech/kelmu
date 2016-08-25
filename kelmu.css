@@ -14,6 +14,9 @@ div.kelmu-container a.kelmu-button {
   padding: 5px 10px 5px 10px;
   text-decoration: none;
 }
+div.kelmu-container div {
+  box-sizing: content-box;
+}
 div.kelmu-container a.kelmu-button:hover {
   background: #de3434;
   background-image: -webkit-linear-gradient(top, #de3434, #af1313);

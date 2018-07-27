@@ -653,7 +653,26 @@
         });
       });
 
-      $('<button></button>').text('Export').addClass('btn').appendTo(generalButtons).click(function(e) {
+      $('<button></button>').text('Export json').addClass('btn').appendTo(generalButtons).click(function(e) {
+        e.preventDefault();
+        container.find('.kelmu-editor-pane').remove();
+        editor.css('height', '');
+        editor.css('width', '');
+        window.kelmu.data[id].selectedElementNumber = -1;
+        window.kelmu.data[id].previousSelectedElementNumber = -1;
+
+        var exportedData = {};
+        exportedData[id] = { definitions: window.kelmu.data[id].definitions, settings: window.kelmu.data[id].settings };
+
+        var exportPanel = $('<div></div>').addClass('kelmu-editor-pane').appendTo(editor);
+        var helpLabel = $('<p></p>').css('font-size', '11px').appendTo(exportPanel);
+        helpLabel.text('Copy and paste the following definition in a file with extension .json');
+        var textarea = $('<textarea></textarea>').appendTo(exportPanel);
+        textarea.css('font-size', '10px').css('min-height', '200px');
+        textarea.val(JSON.stringify(exportedData));
+      });
+
+      $('<button></button>').text('Export jsonp').addClass('btn').appendTo(generalButtons).click(function(e) {
         e.preventDefault();
         container.find('.kelmu-editor-pane').remove();
         editor.css('height', '');

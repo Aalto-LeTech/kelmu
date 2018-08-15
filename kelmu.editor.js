@@ -253,7 +253,7 @@
           var elem = $(this);
           var data = window.kelmu.data[id];
           data.selectedElementNumber = parseInt(elem.attr('data-annotation'), 10);
-          if (elem.css('background-color') === 'transparent') {
+          if (elem.css('background-color') === 'transparent' || elem.css('background-color') === 'rgba(0, 0, 0, 0)') {
             elem.css('background-color', 'rgba(0, 0, 0, 0.1)');
           }
         },

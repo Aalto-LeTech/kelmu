@@ -108,6 +108,12 @@
           // create the annotations for the next step after a delay
           if (!window.kelmu.data[id].animationReadyAvailable) {
             setTimeout(function() {
+              if (window.kelmu.data[id].stepsToRun === 0) {
+                // Add the current state to the undo stack if there are no more steps to run
+                window.kelmu.data[id].undoStack.splice(window.kelmu.data[id].undoStackPointer + 1, window.kelmu.data[id].undoStack.length);
+                window.kelmu.data[id].undoStack.push([window.kelmu.data[id].stepNumber, window.kelmu.data[id].subStepNumber]);
+                window.kelmu.data[id].undoStackPointer += 1;
+              }
               createAnnotations();
               if (window.kelmu.data[id].actions.updateEditor) {
                 window.kelmu.data[id].actions.updateEditor(true, true);
@@ -122,9 +128,7 @@
           if (window.kelmu.data[id].actions.updateEditor) {
             window.kelmu.data[id].actions.updateEditor(true, true);
           }
-        }
 
-        if (window.kelmu.data[id].stepsToRun === 0) {
           // Add the current state to the undo stack if there are no more steps to run
           window.kelmu.data[id].undoStack.splice(window.kelmu.data[id].undoStackPointer + 1, window.kelmu.data[id].undoStack.length);
           window.kelmu.data[id].undoStack.push([window.kelmu.data[id].stepNumber, window.kelmu.data[id].subStepNumber]);
@@ -655,6 +659,12 @@
           // Is there a sequence of steps to be run?
           if (window.kelmu.data[id].stepsToRun === 0) {
             window.kelmu.data[id].stepEvent = null;
+        
+            // Add the current state to the undo stack if there are no more steps to run
+            window.kelmu.data[id].undoStack.splice(window.kelmu.data[id].undoStackPointer + 1, window.kelmu.data[id].undoStack.length);
+            window.kelmu.data[id].undoStack.push([window.kelmu.data[id].stepNumber, window.kelmu.data[id].subStepNumber]);
+            window.kelmu.data[id].undoStackPointer += 1;
+
             createAnnotations();
             if (window.kelmu.data[id].actions.updateEditor) {
               window.kelmu.data[id].actions.updateEditor(true, true);

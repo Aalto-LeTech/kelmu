@@ -717,8 +717,10 @@
       });
 
       if (window.kelmu.createEditor) {
+        var editorLinkContainer = $('<div></div>');
+        container.after(editorLinkContainer);
         var editorLink = $('<a href="#" class="kelmu-editor-link">Annotation editor</a>');
-        editorLink.appendTo(container);
+        editorLink.appendTo(editorLinkContainer);
         editorLink.click(function(e) {
           e.preventDefault();
           window.kelmu.data[id].editorMode = true;
@@ -726,7 +728,7 @@
           $(this).remove();
 
           var editorToggleLink = $('<a href="#" class="kelmu-editor-link">Show/hide editor</a>');
-          editorToggleLink.appendTo(container);
+          editorToggleLink.appendTo(editorLinkContainer);
           editorToggleLink.click(function(e) {
             e.preventDefault();
             if (window.kelmu.data[id].editorMode) {

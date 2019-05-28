@@ -17,6 +17,12 @@ div.kelmu-container a.kelmu-button {
 div.kelmu-container div {
   box-sizing: content-box;
 }
+div.kelmu-container tt {
+  color: red;
+}
+div.kelmu-container div.annotations {
+  line-height: 1.5;
+}
 div.kelmu-container a.kelmu-button:hover {
   background: #de3434;
   background-image: -webkit-linear-gradient(top, #de3434, #af1313);

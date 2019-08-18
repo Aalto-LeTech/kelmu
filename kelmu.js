@@ -44,6 +44,13 @@
      */
     window.kelmu.initAnnotations = function(element, id) {
 
+      element = $(element);
+
+      // Prevent initializing the same animation twice
+      if (element.parents('.kelmu-container').length > 0) {
+        return;
+      }
+
       // Set empty default values if settings or definitions are not available
       window.kelmu.data[id] = window.kelmu.data[id] || {};
       window.kelmu.data[id].settings = window.kelmu.data[id].settings || {};
@@ -52,7 +59,6 @@
       var container = $('<div></div>').addClass('kelmu-container').css('position', 'relative').css('clear', 'both').attr('data-kelmu-id', id);
       var annotationsDiv = $('<div></div>').addClass('annotations').css('position', 'absolute').css('z-index', '50000');
 
-      element = $(element);
       element.wrap(container);
       container = element.parent();
       annotationsDiv.prependTo(container);
@@ -659,7 +665,7 @@
           // Is there a sequence of steps to be run?
           if (window.kelmu.data[id].stepsToRun === 0) {
             window.kelmu.data[id].stepEvent = null;
-        
+
             // Add the current state to the undo stack if there are no more steps to run
             window.kelmu.data[id].undoStack.splice(window.kelmu.data[id].undoStackPointer + 1, window.kelmu.data[id].undoStack.length);
             window.kelmu.data[id].undoStack.push([window.kelmu.data[id].stepNumber, window.kelmu.data[id].subStepNumber]);

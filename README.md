@@ -161,6 +161,16 @@ It is also possible to use `show` and `skip` as actions that occur when leaving 
 
 An action with step modifier `enter` is sent to the animator always when moving to that particular step.
 
+## Publications
+
+Teemu Sirkiä and Juha Sorva. 2015. [Tailoring animations of example programs](https://doi.org/10.1145/2828959.2828965). In Proceedings of the 15th Koli Calling Conference on Computing Education Research (Koli Calling ’15). Association for Computing Machinery, New York, NY, USA, 147–151.
+
+Teemu Sirkiä. 2016. [Jsvee & Kelmu: Creating and tailoring program animations for computing education.](https://doi.org/10.1109/VISSOFT.2016.24) 2016 IEEE Working
+Conference on Software Visualization (VISSOFT), 36–45
+
+Teemu Sirkiä. 2017. [Creating, Tailoring, and Distributing Program Animations - Supporting the Production Process of Interactive Learning Content](http://urn.fi/URN:ISBN:978-952-60-7544-0)
+PhD Thesis, Aalto University
+
 ## License
 
 Copyright Teemu Sirkiä and Aalto University, 2016.
